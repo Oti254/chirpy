@@ -33,3 +33,7 @@
 - When another service happens to be using that port an error will be raised
 - Serve - enters an infinite loop, blocks the main goroutine and awaits incoming TCP connections.
 - When a new TCP connection arrives, it spawns a new goroutine to handle that specific request so the server can immediately go back to waiting for the next connection.
+- We use the mux.Handle() to add a handler for the root path
+- mux.Handle("/", http.FileServer(http.Dir(filepathRoot)))
+- The http.FileServer returns a handler that serves HTTP requests with the contents contained in the root of the filesystem
+- http.Dir converts a filepath to a directory for http.Fileserver
