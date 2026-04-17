@@ -6,15 +6,19 @@ import (
 )
 
 func main() {
-	const port = 8080
+	const port = "8080"
+	// Allocates and returns a new HTTP multiplexer
 	mux := http.NewServeMux()
 
+	// Creates an instance of http.Server
 	srv := &http.Server{
+		// The NewServeMux becomes the server's handler
 		Handler: mux,
-		Addr:    ":8080",
+		Addr:    ":" + port,
 	}
 
 	log.Printf("You are listening on port: %v", port)
-	log.Fatal(http.ListenAndServe(srv.Addr, srv.Handler))
+	// Starts the server
+	log.Fatal(srv.ListenAndServe())
 
 }

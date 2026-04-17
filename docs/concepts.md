@@ -19,3 +19,17 @@
         8. Sending a response to the first request
 - Go servers are great for performance whether the workload is I/O or CPU bound
 - Node.js and Express work great fo I/O bound tasks, but struggle with CPU bound
+
+# Building the server Chirpy
+- Creating a new http.ServeMux.
+- ServeMux is a HTTP request multiplexer that matches the URL of an incoming request, against a list of registered patterns & calls the handler for the pattern.
+- Due to the fact that a server might receive many requests from the same IP address and port but with differing URLs, the Multiplexer i.e., ServeMux is a request router.
+- We need the request router to match the various paths to the registered configured pattern and call the closest match
+- The http.Server instance gives us control over how the server works.
+- Addr tells the servere which port to listen to or to bind
+- Handler makes sure that when a request comes in we use the specific multiplexer to decide where it goes
+- The struct is used for making further configuration tweaks
+- When the srv.ListenandServe() is called; Listen - asks the OS for permission to exclusively own the port configured
+- When another service happens to be using that port an error will be raised
+- Serve - enters an infinite loop, blocks the main goroutine and awaits incoming TCP connections.
+- When a new TCP connection arrives, it spawns a new goroutine to handle that specific request so the server can immediately go back to waiting for the next connection.
