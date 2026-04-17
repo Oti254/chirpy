@@ -12,6 +12,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	// Adding a handler for the root path
+	// Adding the fileserver location for root
 	mux.Handle("/", http.FileServer(http.Dir(filepathRoot)))
 
 	// Creates an instance of http.Server
