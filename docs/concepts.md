@@ -1,5 +1,5 @@
 # THE Why: Theory of HTTP and TCP
------------------------01xservers-----------------------------------
+## 01xservers
 - Clients make a request to the server and the server responds to the requests with the requested data
 - Servers run software that listens to the incoming requests from the clients
 - Go routines are used to serve multiple requests at the same time
