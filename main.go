@@ -27,7 +27,7 @@ func main() {
 	// Adding the fileserver location for root
 	mux.Handle("/app/", apiCfg.middlewareMetricsInc(http.StripPrefix("/app", http.FileServer(http.Dir(filepathRoot)))))
 	mux.HandleFunc("/healthz", handleReadiness)
-	mux.HandleFunc("/metric", apiCfg.handlerMetrics)
+	mux.HandleFunc("/metrics", apiCfg.handlerMetrics)
 	mux.HandleFunc("/reset", apiCfg.resetHandler)
 
 	// Creates an instance of http.Server
@@ -44,7 +44,7 @@ func main() {
 }
 
 func (cfg *apiConfig) handlerMetrics(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Add("Content-Type", "text/plain; charset=utf-8")
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(fmt.Sprintf("Hits: %d", cfg.fileserverHits.Load())))
 
