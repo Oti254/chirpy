@@ -1,5 +1,5 @@
 # Industry Terms
-## 01xservers
+## 01xServers
 - Web Server - a computer that serves data over a network typically over the internet.
 - Node.js - a javascript runtime environment that lets developers create servers, web apps, command line tools and scripts.
 - Express - a Node.js framework
@@ -10,3 +10,7 @@
 # Building Chirpy
 - Handler - a handler responds to a http request by carrying out application logic and writing response headers and bodies
 - Servemux(router) - stores mapping between predefined URL paths for your applications and corresponding handlers
+
+
+## 02xRouting
+- Middleware -  type of computer software program that provides services to software applications beyond those available from the operating system.

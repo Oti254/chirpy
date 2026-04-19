@@ -1,5 +1,5 @@
 # THE Why: Theory of HTTP and TCP
-## 01xservers
+## 01x-Servers
 - Clients make a request to the server and the server responds to the requests with the requested data
 - Servers run software that listens to the incoming requests from the clients
 - Go routines are used to serve multiple requests at the same time
@@ -37,3 +37,9 @@
 - mux.Handle("/", http.FileServer(http.Dir(filepathRoot)))
 - The http.FileServer returns a handler that serves HTTP requests with the contents contained in the root of the filesystem
 - http.Dir converts a filepath to a directory for http.Fileserver
+- Using the http.HandlerFunc - the request argument contains all the information about the incoming request, such as the HTTP method, path headers and body
+- While the ResponseWriter argument is a response and not necessarily a return value.
+- Instead of returning a value all at once we write the response to the ResponseWriter
+
+## 0x2-Routing
+- Middleware is a way to wrap a handler with additional functionality
