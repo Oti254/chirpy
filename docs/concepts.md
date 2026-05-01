@@ -43,3 +43,13 @@
 
 ## 0x2-Routing
 - Middleware is a way to wrap a handler with additional functionality
+- It is basically a way to inject to code into HTTP handlers
+- Stateful handlers are a way to store and access the state in our handlers.
+- Like say, keeping track of the requests we've received or passing around an open connection to a database.
+- We can also implement method specific routing.
+- The ServeMux router uses patterns to dispatch requests to the appropriate handlers
+
+## 0x3-Architecture
+- Coupling refers to the separation between the presentation of data(front-end) and the raw data(back-end)
+- Therefore a monolith, is a single large program that contains the functionality of both the front-end and back-end
+- Decoupled architecture is one where the front-end and back-end are separated into different codebases

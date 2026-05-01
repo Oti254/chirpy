@@ -14,3 +14,8 @@
 
 ## 02xRouting
 - Middleware -  type of computer software program that provides services to software applications beyond those available from the operating system.
+- **Pattern** - a string that specifies the set of URL paths that should be matched to handle HTTP requests
+- **Fixed URL paths** - pattern that exactly matches the URL path.
+- **Subtree Paths** - if a pattern ends with a slash it matches all URL paths that have the same prefix
+- **Longest Match Wins** - if more than one pattern matches the URL path the longest match is chosen, this allows more specificity thus overriding the more general ones
+- **Host Specific Patterns** - allow you to serve different content based on the Host header of the request
